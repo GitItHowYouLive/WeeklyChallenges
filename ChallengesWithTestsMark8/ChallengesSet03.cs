@@ -7,7 +7,13 @@ namespace ChallengesWithTestsMark8
     {
         public bool ArrayContainsAFalse(bool[] vals)
         {
-            throw new NotImplementedException();
+            var result = false;
+            foreach (var thing in vals)
+            {
+                if (!thing)
+                    result = true;
+            }
+            return result;
         }
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
@@ -42,12 +48,22 @@ namespace ChallengesWithTestsMark8
 
         public int[] GetOddsBelow100()
         {
-            throw new NotImplementedException();
+            var odds = new int[49];
+            int num = 1;
+            for(int i = 0; i < odds.Length-1; i++)
+            {
+                odds[i] = num;
+                num += 2;
+            }
+            return odds;
         }
 
         public void ChangeAllElementsToUppercase(string[] words)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < words.Length; i++)
+            {
+                words[i] = words[i].ToUpper();
+            }
         }
     }
 }
